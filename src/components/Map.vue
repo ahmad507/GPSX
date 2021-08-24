@@ -19,9 +19,9 @@ export default {
 
 <style>
 .__container {
-  margin: 155px auto;
+  margin: 25px auto;
   width: 1300px;
-  height: 950px;
+  height: 800px;
   overflow: hidden;
   background: linear-gradient(87deg, #45eda4, #38dddb);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
@@ -31,7 +31,7 @@ export default {
   position: absolute;
   padding: 15px;
   width: 1300px;
-  height: 850px;
+  height: 650px;
 }
 .__controlContainer {
   display: flex;

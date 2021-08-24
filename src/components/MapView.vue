@@ -1,28 +1,34 @@
 <template>
-  <l-map style="height: 800px" :zoom="zoom" :center="center">
-    <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    <l-marker :lat-lng="markerLatLng"></l-marker>
-  </l-map>
+  <div>
+    <l-map :zoom="zoom" :center="center" style="height: 650px; width: 100%">
+      <l-tile-layer :url="url" :attribution="attribution" />
+      <l-marker :lat-lng="marker" />
+    </l-map>
+  </div>
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
+import { latLng } from "leaflet";
+import { LMap, LTileLayer, LMarker, LIcon } from "vue2-leaflet";
 
 export default {
+  name: "SetBounds",
   components: {
     LMap,
     LTileLayer,
     LMarker,
+    LIcon,
   },
   data() {
     return {
+      zoom: 15,
+      center: [-6.19709901804926, 106.582285165786],
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
-        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 15,
-      center: [51.505, -0.159],
-      markerLatLng: [51.504, -0.159],
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      marker: latLng(-6.20180276542041, 106.573283672332),
     };
   },
 };
 </script>
+
