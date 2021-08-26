@@ -1,26 +1,30 @@
 <template>
-  <div class="__container">
-    <div class="__controlContainer">
-      <Control />
+  <div>
+    <div class="__container">
+      <div class="__controlContainer">
+        <Control />
+      </div>
+      <div class="__mapContainer">
+        <MapView />
+      </div>
     </div>
-    <div class="__mapContainer">
-      <MapView />
-    </div>
+    <Chart />
   </div>
 </template>
 
 <script>
+import Chart from "./Chart.vue";
 import Control from "./Control.vue";
 import MapView from "./MapView.vue";
 export default {
-  components: { Control, MapView },
+  components: { Control, MapView, Chart },
 };
 </script>
 
 <style>
 .__container {
-  margin: 25px auto;
-  width: 1300px;
+  margin: 15px auto;
+  width: 1400px;
   height: 800px;
   overflow: hidden;
   background: linear-gradient(87deg, #45eda4, #38dddb);
@@ -29,9 +33,14 @@ export default {
 }
 .__mapContainer {
   position: absolute;
-  padding: 15px;
   width: 1300px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
   height: 650px;
+  overflow: hidden;
+  background-color: rgba(0, 255, 255, 0.836);
+  z-index: 1;
 }
 .__controlContainer {
   display: flex;
