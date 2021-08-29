@@ -1,11 +1,8 @@
 <template>
   <div>
     <div class="__container">
-      <div class="__controlContainer">
-        <Control />
-      </div>
       <div class="__mapContainer">
-        <MapView />
+        <Tracking />
       </div>
     </div>
     <Chart />
@@ -15,9 +12,9 @@
 <script>
 import Chart from "./Chart.vue";
 import Control from "./Control.vue";
-import MapView from "./MapView.vue";
+import Tracking from "./Tracking/Tracking.vue";
 export default {
-  components: { Control, MapView, Chart },
+  components: { Control, Tracking, Chart },
 };
 </script>
 
@@ -32,12 +29,9 @@ export default {
   border-radius: 20px;
 }
 .__mapContainer {
-  position: absolute;
-  width: 1300px;
-  margin-left: 50px;
-  margin-right: 50px;
-  border-radius: 20px;
-  height: 650px;
+  position: relative;
+  width: 1400px;
+  height: 800px;
   overflow: hidden;
   background-color: rgba(0, 255, 255, 0.836);
   z-index: 1;
